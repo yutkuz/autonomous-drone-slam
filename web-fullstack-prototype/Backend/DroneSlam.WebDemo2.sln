@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroneSlam.Api", "DroneSlam.Api\DroneSlam.Api.csproj", "{A30BE3D1-D2D0-4604-8304-6F7670889BB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroneSlam.Domain", "DroneSlam.Domain\DroneSlam.Domain.csproj", "{980EFFEF-9823-4733-A0AB-4DC4DBD134AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroneSlam.Application", "DroneSlam.Application\DroneSlam.Application.csproj", "{8E416C64-204E-4E23-B26E-207863D9BCCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroneSlam.Infrastructure", "DroneSlam.Infrastructure\DroneSlam.Infrastructure.csproj", "{AC2FAA9C-4623-4A77-9A14-C6D675FD74EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A30BE3D1-D2D0-4604-8304-6F7670889BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30BE3D1-D2D0-4604-8304-6F7670889BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30BE3D1-D2D0-4604-8304-6F7670889BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30BE3D1-D2D0-4604-8304-6F7670889BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{980EFFEF-9823-4733-A0AB-4DC4DBD134AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980EFFEF-9823-4733-A0AB-4DC4DBD134AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980EFFEF-9823-4733-A0AB-4DC4DBD134AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980EFFEF-9823-4733-A0AB-4DC4DBD134AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E416C64-204E-4E23-B26E-207863D9BCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E416C64-204E-4E23-B26E-207863D9BCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E416C64-204E-4E23-B26E-207863D9BCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E416C64-204E-4E23-B26E-207863D9BCCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2FAA9C-4623-4A77-9A14-C6D675FD74EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2FAA9C-4623-4A77-9A14-C6D675FD74EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2FAA9C-4623-4A77-9A14-C6D675FD74EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2FAA9C-4623-4A77-9A14-C6D675FD74EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

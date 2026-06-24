@@ -1,0 +1,6 @@
+@DroneSlam.Api_HostAddress = http://localhost:5272
+
+GET {{DroneSlam.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

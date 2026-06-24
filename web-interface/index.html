@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drone SLAM Final Sunumu</title>
+    <link rel="stylesheet" href="./styles.css?v=20260624-1" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Drone SLAM Final</strong>
+          <small>Gazebo + ROS2 + RTAB-Map + LiDAR/RGB-D</small>
+        </span>
+      </a>
+      <nav id="mapNav" class="map-nav" aria-label="Maps geçişleri"></nav>
+    </header>
+
+    <main>
+      <section id="homeView" class="home-view">
+        <div class="home-hero">
+          <div>
+            <p class="eyebrow">Kaşif Ekibi SLAM Simülasyonu</p>
+            <h1>Otonom Drone ile Dijital Harita Keşfi</h1>
+            <p>
+              LiDAR, RGB-D kamera, RTAB-Map nokta bulutu ve mesh çıktıları tek
+              akışta toplandı. Bir senaryo seç, ardından en güçlü çıktılardan
+              ham dosyalara doğru sunum sırasıyla incele.
+            </p>
+          </div>
+          <div class="home-stats">
+            <div><span>Senaryo</span><strong>8</strong></div>
+            <div><span>Final adayları</span><strong>Coverage / Otonom</strong></div>
+            <div><span>3B çıktı</span><strong>PLY + Mesh + DB</strong></div>
+          </div>
+        </div>
+
+        <div id="mapGrid" class="map-grid"></div>
+      </section>
+
+      <section id="detailView" class="detail-view" hidden>
+        <div class="detail-toolbar">
+          <button id="backHome" class="back-button">Maps ekranı</button>
+          <div id="detailJumpNav" class="jump-nav"></div>
+        </div>
+
+        <article id="detailContent"></article>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js?v=20260624-1"></script>
+  </body>
+</html>

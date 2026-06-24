@@ -1,0 +1,16 @@
+{
+  "name": "webdemo",
+  "version": "1.0.0",
+  "description": "Bu klasor, Project-Final altindaki Maps2-Maps8 ciktilarini sunum icin tek web panelinde gosterir.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --check app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "obj2gltf": "^3.2.0",
+    "three": "^0.164.1"
+  }
+}
