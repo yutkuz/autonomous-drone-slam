@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="scenario_1_clean_room">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="floor">
+      <static>true</static>
+      <pose>0 0 0.005 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>8 8 0.01</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>8 8 0.01</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/WoodFloor</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="walls">
+      <static>true</static>
+      <link name="north"><pose>0 4 1.4 0 0 0</pose>
+        <collision name="c"><geometry><box><size>8 0.18 2.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>8 0.18 2.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual>
+      </link>
+      <link name="south"><pose>0 -4 1.4 0 0 0</pose>
+        <collision name="c"><geometry><box><size>8 0.18 2.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>8 0.18 2.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/PaintedWall</name></script></material></visual>
+      </link>
+      <link name="east"><pose>4 0 1.4 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.18 8 2.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.18 8 2.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Residential</name></script></material></visual>
+      </link>
+      <link name="west"><pose>-4 0 1.4 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.18 8 2.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.18 8 2.8</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/CeilingTiled</name></script></material></visual>
+      </link>
+    </model>
+
+    <model name="landmarks">
+      <static>true</static>
+      <link name="red_cube"><pose>2.2 1.8 0.45 0 0 0.2</pose>
+        <collision name="c"><geometry><box><size>0.7 0.7 0.9</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.7 0.7 0.9</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script></material></visual>
+      </link>
+      <link name="blue_column"><pose>-2.2 1.6 0.75 0 0 0</pose>
+        <collision name="c"><geometry><cylinder><radius>0.28</radius><length>1.5</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.28</radius><length>1.5</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script></material></visual>
+      </link>
+      <link name="green_box"><pose>-1.6 -2.1 0.35 0 0 0.7</pose>
+        <collision name="c"><geometry><box><size>1.0 0.45 0.7</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>1.0 0.45 0.7</size></box></geometry><material><ambient>0.1 0.55 0.2 1</ambient><diffuse>0.1 0.55 0.2 1</diffuse></material></visual>
+      </link>
+    </model>
+  </world>
+</sdf>

@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="maze_room">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- Dokulu zemin -->
+    <model name="floor">
+      <static>true</static>
+      <link name="link">
+        <pose>8 -4.5 0.005 0 0 0</pose>
+        <visual name="v">
+          <geometry><box><size>30 24 0.01</size></box></geometry>
+          <material><script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Labirent koridoru (duz -> sag -> sol) -->
+    <model name="maze">
+      <static>true</static>
+
+      <!-- Segment 1: duz (+X) -->
+      <link name="N1"><pose>4.25 1.5 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>12.5 0.2 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>12.5 0.2 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link>
+      <link name="S1"><pose>2.75 -1.5 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>9.5 0.2 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>9.5 0.2 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Residential</name></script></material></visual></link>
+      <link name="WEST"><pose>-2 0 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.2 3.0 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 3.0 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/PaintedWall</name></script></material></visual></link>
+
+      <!-- Segment 2: saga don (-Y) -->
+      <link name="E2"><pose>10.5 -3.75 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.2 10.5 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 10.5 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material></visual></link>
+      <link name="W2"><pose>7.5 -4.5 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.2 6.0 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 6.0 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link>
+
+      <!-- Segment 3: sola don (+X) -->
+      <link name="S3"><pose>12.75 -10.5 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>10.5 0.2 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>10.5 0.2 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Residential</name></script></material></visual></link>
+      <link name="N3"><pose>14.25 -7.5 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>7.5 0.2 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>7.5 0.2 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link>
+      <link name="W3"><pose>7.5 -9 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.2 3.0 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 3.0 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/PaintedWall</name></script></material></visual></link>
+      <link name="EAST"><pose>18 -9 1.25 0 0 0</pose>
+        <collision name="c"><geometry><box><size>0.2 3.0 2.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 3.0 2.5</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material></visual></link>
+    </model>
+
+    <!-- Dokulu sandiklar (duvar kenarlarinda, yolu kapatmaz) -->
+    <model name="crate1"><static>true</static><link name="l"><pose>3 1.0 0.4 0 0 0</pose>
+      <collision name="c"><geometry><box><size>0.8 0.8 0.8</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.8 0.8 0.8</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material></visual></link></model>
+    <model name="crate2"><static>true</static><link name="l"><pose>10.0 -6.5 0.4 0 0 0.5</pose>
+      <collision name="c"><geometry><box><size>0.8 0.8 0.8</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.8 0.8 0.8</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link></model>
+    <model name="crate3"><static>true</static><link name="l"><pose>15.5 -10.0 0.4 0 0 0</pose>
+      <collision name="c"><geometry><box><size>0.8 0.8 0.8</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.8 0.8 0.8</size></box></geometry>
+        <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Residential</name></script></material></visual></link></model>
+
+    <!-- Basit agaclar (govde + yaprak) -->
+    <model name="tree1"><static>true</static>
+      <link name="trunk"><pose>5.5 -1.0 0.6 0 0 0</pose>
+        <visual name="v"><geometry><cylinder><radius>0.12</radius><length>1.2</length></cylinder></geometry>
+          <material><ambient>0.4 0.25 0.1 1</ambient><diffuse>0.4 0.25 0.1 1</diffuse></material></visual></link>
+      <link name="leaves"><pose>5.5 -1.0 1.5 0 0 0</pose>
+        <visual name="v"><geometry><sphere><radius>0.6</radius></sphere></geometry>
+          <material><ambient>0.1 0.5 0.1 1</ambient><diffuse>0.1 0.6 0.1 1</diffuse></material></visual></link></model>
+    <model name="tree2"><static>true</static>
+      <link name="trunk"><pose>13.0 -8.0 0.6 0 0 0</pose>
+        <visual name="v"><geometry><cylinder><radius>0.12</radius><length>1.2</length></cylinder></geometry>
+          <material><ambient>0.4 0.25 0.1 1</ambient><diffuse>0.4 0.25 0.1 1</diffuse></material></visual></link>
+      <link name="leaves"><pose>13.0 -8.0 1.5 0 0 0</pose>
+        <visual name="v"><geometry><sphere><radius>0.6</radius></sphere></geometry>
+          <material><ambient>0.1 0.5 0.1 1</ambient><diffuse>0.1 0.6 0.1 1</diffuse></material></visual></link></model>
+
+  </world>
+</sdf>

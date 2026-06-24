@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="feature_loop_gallery">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="floor"><static>true</static><pose>0 0 0.005 0 0 0</pose><link name="link">
+      <collision name="c"><geometry><box><size>22 18 0.01</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>22 18 0.01</size></box></geometry>
+        <material><ambient>0.34 0.34 0.31 1</ambient><diffuse>0.40 0.40 0.36 1</diffuse></material>
+      </visual>
+    </link></model>
+
+    <model name="outer_gallery_walls"><static>true</static>
+      <link name="south_wall"><pose>0 -6.8 1.45 0 0 0</pose><collision name="c"><geometry><box><size>18.2 0.20 2.9</size></box></geometry></collision><visual name="v"><geometry><box><size>18.2 0.20 2.9</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Bricks</name></script></material></visual></link>
+      <link name="north_wall"><pose>0 6.8 1.45 0 0 0</pose><collision name="c"><geometry><box><size>18.2 0.20 2.9</size></box></geometry></collision><visual name="v"><geometry><box><size>18.2 0.20 2.9</size></box></geometry><material><ambient>0.24 0.42 0.76 1</ambient><diffuse>0.24 0.42 0.76 1</diffuse></material></visual></link>
+      <link name="west_wall"><pose>-9.0 0 1.45 0 0 1.5708</pose><collision name="c"><geometry><box><size>13.8 0.20 2.9</size></box></geometry></collision><visual name="v"><geometry><box><size>13.8 0.20 2.9</size></box></geometry><material><ambient>0.31 0.58 0.38 1</ambient><diffuse>0.31 0.58 0.38 1</diffuse></material></visual></link>
+      <link name="east_wall"><pose>9.0 0 1.45 0 0 1.5708</pose><collision name="c"><geometry><box><size>13.8 0.20 2.9</size></box></geometry></collision><visual name="v"><geometry><box><size>13.8 0.20 2.9</size></box></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Wood</name></script></material></visual></link>
+    </model>
+
+    <model name="central_feature_island"><static>true</static>
+      <link name="island_south"><pose>0 -2.15 1.25 0 0 0</pose><collision name="c"><geometry><box><size>5.2 0.18 2.5</size></box></geometry></collision><visual name="v"><geometry><box><size>5.2 0.18 2.5</size></box></geometry><material><ambient>0.78 0.53 0.20 1</ambient><diffuse>0.78 0.53 0.20 1</diffuse></material></visual></link>
+      <link name="island_north"><pose>0 2.15 1.25 0 0 0</pose><collision name="c"><geometry><box><size>5.2 0.18 2.5</size></box></geometry></collision><visual name="v"><geometry><box><size>5.2 0.18 2.5</size></box></geometry><material><ambient>0.66 0.25 0.24 1</ambient><diffuse>0.66 0.25 0.24 1</diffuse></material></visual></link>
+      <link name="island_west"><pose>-2.6 0 1.25 0 0 1.5708</pose><collision name="c"><geometry><box><size>4.2 0.18 2.5</size></box></geometry></collision><visual name="v"><geometry><box><size>4.2 0.18 2.5</size></box></geometry><material><ambient>0.20 0.55 0.58 1</ambient><diffuse>0.20 0.55 0.58 1</diffuse></material></visual></link>
+      <link name="island_east"><pose>2.6 0 1.25 0 0 1.5708</pose><collision name="c"><geometry><box><size>4.2 0.18 2.5</size></box></geometry></collision><visual name="v"><geometry><box><size>4.2 0.18 2.5</size></box></geometry><material><ambient>0.52 0.33 0.70 1</ambient><diffuse>0.52 0.33 0.70 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="slam_landmarks"><static>true</static>
+      <link name="red_column_a"><pose>-7.7 -5.7 0.95 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Red</name></script></material></visual></link>
+      <link name="blue_column_b"><pose>7.7 -5.7 0.95 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry><material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script></material></visual></link>
+      <link name="green_column_c"><pose>7.7 5.7 0.95 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry><material><ambient>0.06 0.56 0.24 1</ambient><diffuse>0.06 0.56 0.24 1</diffuse></material></visual></link>
+      <link name="yellow_column_d"><pose>-7.7 5.7 0.95 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.22</radius><length>1.9</length></cylinder></geometry><material><ambient>0.86 0.70 0.15 1</ambient><diffuse>0.86 0.70 0.15 1</diffuse></material></visual></link>
+
+      <link name="tree_trunk"><pose>-3.7 -5.8 0.45 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.13</radius><length>0.9</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.13</radius><length>0.9</length></cylinder></geometry><material><ambient>0.34 0.18 0.08 1</ambient><diffuse>0.34 0.18 0.08 1</diffuse></material></visual></link>
+      <link name="tree_top"><pose>-3.7 -5.8 1.10 0 0 0</pose><collision name="c"><geometry><sphere><radius>0.38</radius></sphere></geometry></collision><visual name="v"><geometry><sphere><radius>0.38</radius></sphere></geometry><material><ambient>0.05 0.45 0.18 1</ambient><diffuse>0.05 0.45 0.18 1</diffuse></material></visual></link>
+      <link name="table"><pose>3.8 -5.8 0.36 0 0 0.35</pose><collision name="c"><geometry><box><size>1.0 0.55 0.32</size></box></geometry></collision><visual name="v"><geometry><box><size>1.0 0.55 0.32</size></box></geometry><material><ambient>0.42 0.25 0.12 1</ambient><diffuse>0.42 0.25 0.12 1</diffuse></material></visual></link>
+      <link name="cat_marker"><pose>3.9 5.8 0.22 0 0 -0.4</pose><collision name="c"><geometry><box><size>0.55 0.24 0.28</size></box></geometry></collision><visual name="v"><geometry><box><size>0.55 0.24 0.28</size></box></geometry><material><ambient>0.06 0.06 0.06 1</ambient><diffuse>0.06 0.06 0.06 1</diffuse></material></visual></link>
+      <link name="dog_marker"><pose>-3.9 5.8 0.28 0 0 0.45</pose><collision name="c"><geometry><box><size>0.78 0.32 0.36</size></box></geometry></collision><visual name="v"><geometry><box><size>0.78 0.32 0.36</size></box></geometry><material><ambient>0.72 0.48 0.25 1</ambient><diffuse>0.72 0.48 0.25 1</diffuse></material></visual></link>
+
+      <link name="striped_panel_a"><pose>-8.88 -2.6 1.4 0 0 1.5708</pose><collision name="c"><geometry><box><size>1.1 0.04 1.2</size></box></geometry></collision><visual name="v"><geometry><box><size>1.1 0.04 1.2</size></box></geometry><material><ambient>0.92 0.92 0.18 1</ambient><diffuse>0.92 0.92 0.18 1</diffuse></material></visual></link>
+      <link name="striped_panel_b"><pose>8.88 2.6 1.4 0 0 1.5708</pose><collision name="c"><geometry><box><size>1.1 0.04 1.2</size></box></geometry></collision><visual name="v"><geometry><box><size>1.1 0.04 1.2</size></box></geometry><material><ambient>0.90 0.28 0.70 1</ambient><diffuse>0.90 0.28 0.70 1</diffuse></material></visual></link>
+      <link name="north_marker"><pose>0 6.66 1.15 0 0 0</pose><collision name="c"><geometry><box><size>1.5 0.04 1.1</size></box></geometry></collision><visual name="v"><geometry><box><size>1.5 0.04 1.1</size></box></geometry><material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material></visual></link>
+      <link name="south_marker"><pose>0 -6.66 1.15 0 0 0</pose><collision name="c"><geometry><box><size>1.5 0.04 1.1</size></box></geometry></collision><visual name="v"><geometry><box><size>1.5 0.04 1.1</size></box></geometry><material><ambient>0.10 0.10 0.10 1</ambient><diffuse>0.10 0.10 0.10 1</diffuse></material></visual></link>
+    </model>
+  </world>
+</sdf>
